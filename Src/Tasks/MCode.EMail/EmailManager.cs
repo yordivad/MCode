@@ -24,6 +24,10 @@ namespace MCode.Email
     [Export(typeof(ITask))]
     public class EmailManager : ITask
     {
+        /// <summary>
+        /// Gets or sets the configuration.
+        /// </summary>
+        /// <value>The configuration.</value>
         public EmailConfig Config { get; set; }
 
         /// <summary>
@@ -40,7 +44,6 @@ namespace MCode.Email
                 User = context.Config.Settings["User"],
                 Password = context.Config.Settings["Password"]
             };
-
         }
     }
 }

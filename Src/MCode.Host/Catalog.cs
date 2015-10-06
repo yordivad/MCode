@@ -11,23 +11,22 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-using System.ComponentModel.Composition.Hosting;
-
 namespace MCode.Host
 {
+    using System.ComponentModel.Composition.Hosting;
+
     /// <summary>
-    /// Class Catalog.
+    ///     Class Catalog.
     /// </summary>
     public class Catalog
     {
         /// <summary>
-        /// The catalog
+        ///     The catalog
         /// </summary>
         private readonly AggregateCatalog catalog;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Catalog"/> class.
+        ///     Initializes a new instance of the <see cref="Catalog" /> class.
         /// </summary>
         public Catalog()
         {
@@ -35,7 +34,7 @@ namespace MCode.Host
         }
 
         /// <summary>
-        /// Initializes this instance.
+        ///     Initializes this instance.
         /// </summary>
         public void Initialize()
         {
