@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCode.CoreTest", "Test\MCod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCode.EMail", "Src\Tasks\MCode.EMail\MCode.EMail.csproj", "{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{D549FFFB-BBEF-4422-9A83-6D4719FF17D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCode.Console", "Src\Host\MCode.Console\MCode.Console.csproj", "{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +52,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CD888B40-BA46-4855-AB14-7F19B5A25FB4} = {0567E5C5-CF8B-4E5C-8DE2-9C6E7EC57A39}
 		{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9} = {547A68C0-560A-4CAB-97CA-18D7024F3509}
+		{2AB2965B-2ECE-4630-8A89-6BC3399E8CCB} = {D549FFFB-BBEF-4422-9A83-6D4719FF17D7}
 	EndGlobalSection
 EndGlobal
