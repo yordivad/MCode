@@ -15,6 +15,7 @@ namespace MCode.TasksTest.Email.Features.Steps
 {
     using System.Collections.Generic;
     using Core.Configuration;
+    using FluentAssertions;
     using MCode.Email;
     using MCode.Email.Domain;
     using Moq;
@@ -55,8 +56,9 @@ namespace MCode.TasksTest.Email.Features.Steps
         public void GivenTheConfig(Table table)
         {
             var config = table.CreateInstance<EmailConfig>();
-
             var dictionary = this.CreateSettings(config);
+
+            ScenarioContext.Current["actualConfig"] = config;
 
             this.contextMock.Setup(c => c.Config).Returns(() => new Config { Settings = dictionary });
         }
@@ -84,7 +86,7 @@ namespace MCode.TasksTest.Email.Features.Steps
         [When(@"Initialize")]
         public void WhenInitialize()
         {
-            ScenarioContext.Current.Pending();
+            this.manager.Initialize(this.contextMock.Object);
         }
 
         /// <summary>
@@ -93,7 +95,8 @@ namespace MCode.TasksTest.Email.Features.Steps
         [Then(@"Validate all settings are setup")]
         public void ThenValidateAllSettingsAreSetup()
         {
-            ScenarioContext.Current.Pending();
+            var actual = ScenarioContext.Current["actualConfig"];
+            actual.ShouldBeEquivalentTo(this.manager.Config);
         }
     }
 }
