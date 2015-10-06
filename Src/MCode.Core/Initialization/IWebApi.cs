@@ -14,12 +14,12 @@
 namespace MCode.Core.Initialization
 {
     using MCode.Core.Configuration;
+
     /// <summary>
     /// Interface IWebApi
     /// </summary>
-    internal interface IWebApi
+    public interface IWebApi
     {
-
         /// <summary>
         /// Initializes the specified context.
         /// </summary>

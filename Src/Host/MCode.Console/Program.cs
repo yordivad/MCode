@@ -1,14 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// ***********************************************************************
+// Assembly         : MCode.Console
+// Author           : Roy
+// Created          : 10-06-2015
+//
+// Last Modified By : Roy
+// Last Modified On : 10-06-2015
+// ***********************************************************************
+// <copyright file="Program.cs" company="MCode">
+//     ©  2015 MCode
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 namespace MCode.Console
 {
-    class Program
+    /// <summary>
+    /// Class Program.
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        private static void Main(string[] args)
         {
         }
     }

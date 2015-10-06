@@ -11,7 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace MCode.Core
+namespace MCode.Core.Initialization
 {
     using MCode.Core.Configuration;
 
@@ -20,7 +20,6 @@ namespace MCode.Core
     /// </summary>
     public interface ITask
     {
-
         /// <summary>
         /// Initializes the specified context.
         /// </summary>

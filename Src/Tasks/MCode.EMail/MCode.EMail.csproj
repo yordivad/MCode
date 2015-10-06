@@ -7,10 +7,11 @@
     <ProjectGuid>{8E2FF9C2-1BDE-4052-A2CD-F18AC234AEF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MCode.EMail</RootNamespace>
-    <AssemblyName>MCode.EMail</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>MCode.Email</RootNamespace>
+    <AssemblyName>MCode.Email</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\EmailConfig.cs" />
     <Compile Include="EmailManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IEmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MCode.Core\MCode.Core.csproj">

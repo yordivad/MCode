@@ -6,17 +6,17 @@
 // Last Modified By : Roy
 // Last Modified On : 10-06-2015
 // ***********************************************************************
-// <copyright file="IWebContext.cs" company="MCore">
+// <copyright file="DefinitionAttribute.cs" company="MCore">
 //     © 2015 MCore
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace MCode.Core.Configuration
+namespace MCode.Core.Annotation
 {
     /// <summary>
-    /// Interface IWebConfig
+    /// Class DefinitionAttribute.
     /// </summary>
-    public interface IWebContext : IContext
+    public class DefinitionAttribute
     {
     }
 }

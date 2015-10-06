@@ -11,16 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-using System.Collections.Generic;
-using FluentAssertions;
-using MCode.Core;
-using MCode.Core.Configuration;
-using Moq;
-using TechTalk.SpecFlow;
-
 namespace MCode.CoreTest.Steps
 {
+    using System.Collections.Generic;
+    using Core;
+    using Core.Configuration;
+    using Core.Initialization;
+    using FluentAssertions;
+    using Moq;
+    using TechTalk.SpecFlow;
+
     /// <summary>
     ///     Class RunnerSteps. This class cannot be inherited.
     /// </summary>
@@ -28,16 +28,18 @@ namespace MCode.CoreTest.Steps
     public sealed class RunnerSteps
     {
         /// <summary>
+        ///     The mock context
+        /// </summary>
+        private Mock<IContext> mockContext;
+
+        /// <summary>
         ///     The mockTask
         /// </summary>
         private Mock<ITask> mockTask;
 
         /// <summary>
-        /// The mock context
+        ///     The mock web context
         /// </summary>
-        private Mock<IContext> mockContext;
-
-
         private Mock<IWebContext> mockWebContext;
 
         /// <summary>
@@ -51,12 +53,11 @@ namespace MCode.CoreTest.Steps
         [BeforeScenario]
         public void Initialize()
         {
-
-            mockContext = new Mock<IContext>();
-            mockWebContext = new Mock<IWebContext>();
+            this.mockContext = new Mock<IContext>();
+            this.mockWebContext = new Mock<IWebContext>();
             this.mockTask = new Mock<ITask>();
-            this.mockTask.Setup(c=> c.Initialize(mockContext.Object)).Verifiable();
-            this.runner = new Runner(mockContext.Object, mockWebContext.Object);
+            this.mockTask.Setup(c => c.Initialize(this.mockContext.Object)).Verifiable();
+            this.runner = new Runner(this.mockContext.Object, this.mockWebContext.Object);
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace MCode.CoreTest.Steps
         public void GivenGiveANewAction()
         {
             var task = this.mockTask.Object;
-            ScenarioContext.Current["task"] = new List<ITask>{task};
+            ScenarioContext.Current["task"] = new List<ITask> { task };
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace MCode.CoreTest.Steps
         }
 
         /// <summary>
-        /// Then the catalog needs to have action.
+        ///     Then the catalog needs to have action.
         /// </summary>
         /// <param name="actions">The actions.</param>
         [Then(@"The catalog needs to have (.*) action")]
@@ -89,7 +90,7 @@ namespace MCode.CoreTest.Steps
         }
 
         /// <summary>
-        /// Whens the i start all modules.
+        ///     Whens the i start all modules.
         /// </summary>
         [When(@"I Start All Modules")]
         public void WhenIStartAllModules()
@@ -99,14 +100,12 @@ namespace MCode.CoreTest.Steps
         }
 
         /// <summary>
-        /// Thens the catalog need to verify initialization is called.
+        ///     Then the catalog need to verify initialization is called.
         /// </summary>
         [Then(@"The catalog need to Verify initialization is Called")]
         public void ThenTheCatalogNeedToVerifyInitializationIsCalled()
         {
-            this.mockTask.Verify(c=> c.Initialize(It.IsAny<IWebContext>()));   
+            this.mockTask.Verify(c => c.Initialize(It.IsAny<IContext>()));
         }
-
-
     }
 }

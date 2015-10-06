@@ -1,22 +1,22 @@
 ﻿// ***********************************************************************
-// Assembly         : MCode.Core
+// Assembly         : MCode.Email
 // Author           : Roy
 // Created          : 10-06-2015
 //
 // Last Modified By : Roy
 // Last Modified On : 10-06-2015
 // ***********************************************************************
-// <copyright file="IWebContext.cs" company="MCore">
-//     © 2015 MCore
+// <copyright file="IEmailService.cs" company="MCode">
+//     © 2015 MCode
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace MCode.Core.Configuration
+namespace MCode.Email.Services
 {
     /// <summary>
-    /// Interface IWebConfig
+    /// Interface IEmailService
     /// </summary>
-    public interface IWebContext : IContext
+    public interface IEmailService
     {
     }
 }
