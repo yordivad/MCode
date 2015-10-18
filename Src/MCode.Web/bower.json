@@ -1,0 +1,19 @@
+{
+  "name": "mcode.js",
+  "version": "1.0.0",
+  "authors": [
+    "MCode"
+  ],
+  "description": "MCode JS Framework.",
+  "private": true,
+  "dependencies": {
+    "requirejs": "2.1.10",
+    "jQuery": "1.9.1",
+    "alertify": "0.3.10",
+    "commonjs-require": "~1.4.5",
+    "angular": "~1.4.7",
+    "sweetalert": "~1.1.0",
+    "the-graph": "~0.3.12",
+    "bootstrap": "~3.3.5"
+  }
+}
