@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "MCode.WebUI"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-MCode.WebUI-73619419-9547-4a2d-bf15-43e8e5d8f14d;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

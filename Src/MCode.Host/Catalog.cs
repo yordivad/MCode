@@ -13,6 +13,7 @@
 // ***********************************************************************
 namespace MCode.Host
 {
+    using System.ComponentModel.Composition;
     using System.ComponentModel.Composition.Hosting;
 
     /// <summary>
@@ -34,13 +35,14 @@ namespace MCode.Host
         }
 
         /// <summary>
-        ///     Initializes this instance.
+        /// Initializes this instance.
         /// </summary>
-        public void Initialize()
+        /// <returns>the CompositionContainer.</returns>
+        public CompositionContainer Initialize()
         {
             this.catalog.Catalogs.Add(new AssemblyCatalog(typeof(Catalog).Assembly));
-            var container = new CompositionContainer(this.catalog);
-            container.SatisfyImportsOnce(null);
+            this.catalog.Catalogs.Add(new DirectoryCatalog(@"./components"));
+            return new CompositionContainer(this.catalog);
         }
     }
 }

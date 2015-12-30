@@ -11,19 +11,28 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Initialization
 {
     using MCode.Core.Configuration;
 
+    using Ninject;
+
     /// <summary>
-    /// Interface IWebApi
+    ///     Interface IWebApi
     /// </summary>
     public interface IWebApi
     {
         /// <summary>
-        /// Initializes the specified context.
+        ///     Initializes the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
         void Initialize(IWebContext context);
+
+        /// <summary>
+        ///     Configures the specified kernel.
+        /// </summary>
+        /// <param name="kernel">The kernel.</param>
+        void Configure(IKernel kernel);
     }
 }

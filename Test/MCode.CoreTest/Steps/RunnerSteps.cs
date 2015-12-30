@@ -57,7 +57,7 @@ namespace MCode.CoreTest.Steps
             this.mockWebContext = new Mock<IWebContext>();
             this.mockTask = new Mock<ITask>();
             this.mockTask.Setup(c => c.Initialize(this.mockContext.Object)).Verifiable();
-            this.runner = new Runner(this.mockContext.Object, this.mockWebContext.Object);
+            this.runner = new Runner(this.mockContext.Object, null);
         }
 
         /// <summary>

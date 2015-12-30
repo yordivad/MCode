@@ -11,10 +11,11 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Annotation
 {
     /// <summary>
-    /// Class DefinitionAttribute.
+    ///     Class DefinitionAttribute.
     /// </summary>
     public class DefinitionAttribute
     {

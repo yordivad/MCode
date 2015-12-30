@@ -11,17 +11,18 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Configuration
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// Class Config.
+    ///     Class Config.
     /// </summary>
     public class Config : IConfig
     {
         /// <summary>
-        /// Gets or sets the settings.
+        ///     Gets or sets the settings.
         /// </summary>
         /// <value>The settings.</value>
         public IDictionary<string, string> Settings { get; set; }

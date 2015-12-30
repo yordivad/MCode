@@ -11,12 +11,20 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Configuration
 {
+    using Owin;
+
     /// <summary>
-    /// Interface IWebConfig
+    ///     Interface IWebConfig
     /// </summary>
     public interface IWebContext : IContext
     {
+        /// <summary>
+        ///     Gets or sets the application builder.
+        /// </summary>
+        /// <value>The application builder.</value>
+        IAppBuilder AppBuilder { get; set; }
     }
 }

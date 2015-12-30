@@ -11,17 +11,18 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Initialization
 {
     using MCode.Core.Configuration;
 
     /// <summary>
-    /// Interface ITask
+    ///     Interface ITask
     /// </summary>
     public interface ITask
     {
         /// <summary>
-        /// Initializes the specified context.
+        ///     Initializes the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
         void Initialize(IContext context);

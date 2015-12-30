@@ -11,15 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core.Configuration
 {
     /// <summary>
-    /// Interface IContext
+    ///     Interface IContext
     /// </summary>
     public interface IContext
     {
         /// <summary>
-        /// Gets or sets the configuration.
+        ///     Gets or sets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
         IConfig Config { get; set; }

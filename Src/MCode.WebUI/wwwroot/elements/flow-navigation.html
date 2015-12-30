@@ -1,0 +1,38 @@
+﻿<link rel="import" href="flow-thumb.html">
+
+<dom-module id="flow-navigation">
+    <template>
+        <style>
+            #thumb,
+            #outcanvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: visible;
+            }
+
+            #viewrect {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 150px;
+                border: 1px solid hsla(190, 100%, 80%, 0.4);
+                border-style: dotted;
+            }
+        </style>
+
+        <flow-thumb id="thumb"
+                         graph="{{ editor.nofloGraph }}"
+                         thumbrectangle="{{thumbrectangle}}"
+                         width="{{width}}" height="{{height}}"
+                         thumbscale="{{thumbscale}}"
+                         hide="{{hide}}"
+                         theme="{{ editor.theme }}">
+        </flow-thumb>
+
+        <canvas id="outcanvas" width="{{width}}" height="{{height}}" style="position: absolute; top: 0; left: 0;"></canvas>
+        <div id="viewrect"></div>
+    </template>
+</dom-module>
+<script type="text/javascript" src="../src/navigation.js"></script>

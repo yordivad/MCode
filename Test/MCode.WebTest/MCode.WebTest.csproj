@@ -127,11 +127,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\Authentication.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Authentication.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Routes.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,17 +137,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Startup.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Steps\AuthenticationSteps.cs" />
     <Compile Include="Features\Steps\RouteSteps.cs" />
     <Compile Include="Features\Steps\StartupSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Authentication.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Authentication.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\Routes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Routes.feature.cs</LastGenOutput>
@@ -162,12 +152,6 @@
       <LastGenOutput>Startup.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Src\MCode.Web\MCode.WebUI.csproj">
-      <Project>{86c43687-eb26-4d15-b77f-324fde63e68a}</Project>
-      <Name>MCode.WebUI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

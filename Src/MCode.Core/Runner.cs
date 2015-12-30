@@ -11,48 +11,53 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 namespace MCode.Core
 {
     using System.Collections.Generic;
     using System.ComponentModel.Composition;
+
     using MCode.Core.Configuration;
     using MCode.Core.Initialization;
 
+    using Ninject;
+
     /// <summary>
-    /// Class Runner.
+    ///     Class Runner.
     /// </summary>
-    public class Runner
+    public class Runner : IRunner
     {
         /// <summary>
-        /// The context
+        ///     The context
         /// </summary>
         private readonly IContext context;
 
         /// <summary>
-        /// The web context
+        ///     The kernel
         /// </summary>
-        private readonly IWebContext webContext;
+        private readonly IKernel kernel;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Runner"/> class.
+        ///     Initializes a new instance of the <see cref="Runner" /> class.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="webContext">The web context.</param>
-        public Runner(IContext context, IWebContext webContext)
+        /// <param name="kernel">The kernel.</param>
+        public Runner(IContext context, IKernel kernel)
         {
             this.context = context;
-            this.webContext = webContext;
+            this.kernel = kernel;
         }
 
         /// <summary>
-        /// Gets or sets the task.
+        ///     Gets or sets the task.
         /// </summary>
         /// <value>The task.</value>
         [ImportMany]
         public IEnumerable<ITask> Task { get; set; }
 
         /// <summary>
-        /// Starts all.
+        ///     Starts all.
         /// </summary>
         public void StartAll()
         {
