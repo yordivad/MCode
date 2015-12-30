@@ -16,3 +16,7 @@ packages/
 _ReSharper.*/
 Src/MCode.Web/node_modules/
 Src/MCode.Web/library/
+Src/MCode.WebUI/node_modules/
+Src/MCode.WebUI/wwwroot/lib/
+Src/dist/
+*.Cache
