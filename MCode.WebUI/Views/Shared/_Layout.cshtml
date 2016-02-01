@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>MCode.WebUI</title>
+
+    <link rel="import" href="~/lib/polymer/polymer.html" />
+    <link rel="import" href="~/lib/polymer-ts/polymer-ts.html" />
+
+    <script type="text/javascript" src="~/lib/react/react.js"></script>
+    <script type="text/javascript" src="~/standalone/polymergestures.js"></script>
+    <script type="text/javascript" src="~/lib/webcomponentsjs/webcomponents-lite.js"></script>
+    <script type="text/javascript" src="~/lib/klay-js/klay.js"></script>
+    <script type="text/javascript" src="~/lib/klayjs-noflo/klay-noflo.js"></script>
+    <script type="text/javascript" src="~/lib/polymer-ts/polymer-ts.js"></script>
+
+    @RenderSection("polimer", required: false)
+
+</head>
+
+
+
+<body>
+
+    @RenderBody()
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

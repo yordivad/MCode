@@ -1,91 +1,91 @@
-﻿// ***********************************************************************
-// Assembly         : MCode.WebUI
-// ***********************************************************************
-// <copyright file="Startup.cs" company="MCode">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>The startup.</summary>
-// ***********************************************************************
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Data.Entity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-namespace MCode.WebUI
+
+namespace SampleWeb
 {
-    using Microsoft.AspNet.Builder;
-    using Microsoft.AspNet.Diagnostics;
-    using Microsoft.AspNet.Diagnostics.Entity;
-    using Microsoft.AspNet.Hosting;
-    using Microsoft.Framework.Configuration;
-    using Microsoft.Framework.Configuration.EnvironmentVariables;
-    using Microsoft.Framework.DependencyInjection;
-    using Microsoft.Framework.Logging;
-    using Microsoft.Framework.Runtime;
-
-    /// <summary>
-    /// The startup.
-    /// </summary>
-    public class Startup
+    public class Startup    
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Startup" /> class.
-        /// </summary>
-        /// <param name="env">The env.</param>
-        /// <param name="appEnv">The app env.</param>
-        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
+        public Startup(IHostingEnvironment env)
         {
-            var builder =
-                new ConfigurationBuilder( new EnvironmentVariablesConfigurationProvider()).AddJsonFile("config.json")
-                    .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+            // Set up configuration sources.
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
             if (env.IsDevelopment())
             {
-                builder.AddUserSecrets();
+              
             }
 
             builder.AddEnvironmentVariables();
-            this.Configuration = builder.Build();
+            Configuration = builder.Build();
         }
 
-        /// <summary>
-        /// Gets or sets the configuration.
-        /// </summary>
-        /// <value>The configuration.</value>
-        public IConfiguration Configuration { get; set; }
+        public IConfigurationRoot Configuration { get; set; }
 
-        /// <summary>
-        /// The configure services.
-        /// </summary>
-        /// <param name="services">The services.</param>
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+
             services.AddMvc();
+            
         }
 
-        // Configure is called after ConfigureServices is called.
-        /// <summary>
-        /// The configure.
-        /// </summary>
-        /// <param name="app">The app.</param>
-        /// <param name="env">The env.</param>
-        /// <param name="loggerFactory">The logger factory.</param>
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.MinimumLevel = LogLevel.Information;
-            loggerFactory.AddConsole();
+            
 
             if (env.IsDevelopment())
             {
-                //app.UseBrowserLink();
-                app.UseErrorPage(ErrorPageOptions.ShowAll);
-                app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
+                app.UseBrowserLink();
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
-                app.UseErrorHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error");
+
+                // For more details on creating database during deployment see http://go.microsoft.com/fwlink/?LinkID=615859
+                try
+                {
+                    using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
+                        .CreateScope())
+                    {
+            
+                    }
+                }
+                catch { }
             }
+
+            app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
             app.UseStaticFiles();
 
-            app.UseMvc(
-                routes => { routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}"); });
+            app.UseIdentity();
+
+            // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
+
+        // Entry point for the application.
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

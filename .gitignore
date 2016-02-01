@@ -20,3 +20,5 @@ Src/MCode.WebUI/node_modules/
 Src/MCode.WebUI/wwwroot/lib/
 Src/dist/
 *.Cache
+/MCode.WebUI/node_modules
+/MCode.WebUI/wwwroot/lib
