@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCode.Authentication", "Src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCore.Workflow", "Src\Tasks\MCore.Workflow\MCore.Workflow.csproj", "{3AA66D2B-E8CD-4571-BE30-2C2938B11C6F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MCode.WebUI", "MCode.WebUI\MCode.WebUI.xproj", "{E0003809-A3CD-46B1-BE8D-B68D3F87D6F7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MCode.WebUI", "Src\MCode.WebUI\MCode.WebUI.xproj", "{E0003809-A3CD-46B1-BE8D-B68D3F87D6F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
