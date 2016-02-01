@@ -22,3 +22,4 @@ Src/dist/
 *.Cache
 /MCode.WebUI/node_modules
 /MCode.WebUI/wwwroot/lib
+Src/MCode.WebUI/typings/
