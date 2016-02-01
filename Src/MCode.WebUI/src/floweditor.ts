@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Src/MCode.WebUI/typings/requirejs/require.d.ts" />
+﻿
 interface ITheGraph {
     Clipboard :any;
 }
