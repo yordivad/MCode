@@ -7,6 +7,7 @@
   "description": "MCode Javascript Framework",
   "private": true,
   "dependencies": {
+    "jquery": "^2.1.4",
     "angular": "^1.4.7",
     "bower": "^1.5.2",
     "chai": "^3.3.0",
@@ -22,10 +23,10 @@
     "grunt-jslint": "^1.1.14",
     "grunt-mocha-istanbul": "^3.0.1",
     "grunt-npm": "0.0.2",
-    "grunt-tslint": "^2.5.0",
-    "grunt-typescript": "^0.7.0",
-    "istanbul": "^0.3.22",
-    "jsdom": "^7.0.0",
+    "grunt-tslint": "^3.0.1",
+    "grunt-typescript": "^0.8.0",
+    "istanbul": "^0.4.2",
+    "jsdom": "^8.0.2",
     "jslint": "^0.9.3",
     "jsmockito": "^1.0.5",
     "load-grunt-tasks": "^3.3.0",
@@ -35,17 +36,13 @@
     "path": "^0.12.7",
     "react": "^0.14.0",
     "tsd": "^0.6.5",
-    "tslint": "^2.5.1",
+    "tslint": "^3.3.0",
     "typed-react": "^3.4.1",
-    "typescript": "^1.6.2",
-    "yadda": "^0.15.4",
+    "typescript": "^1.7.5",
+    "yadda": "^0.17.0",
     "yadda-mocha-html-reporter": "0.0.5"
   },
   "engines": {
     "node": ">=0.8.0"
-  },
-  "devDependencies": {
-    "jquery": "^2.1.4",
-    "jsdom": "^6.5.1"
   }
 }

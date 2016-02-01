@@ -7,24 +7,26 @@
   "description": "MCode JS Framework.",
   "private": true,
   "dependencies": {
-    "requirejs": "2.1.10",
+    "requirejs": "2.1.20",
     "alertify": "0.3.10",
     "sweetalert": "~1.1.0",
     "the-graph": "~0.3.12",
-    "bootstrap": "~3.3.5",
-    "angular": "~1.4.7",
+    "bootstrap": "3.3.5",
+    "angular": "1.4.6",
     "polymer": "~1.1.5",
     "jquery": "~2.1.4",
     "polymer-ts": "~0.1.21",
     "klayjs-noflo": "~0.3.0",
     "font-awesome": "~4.4.0",
-    "hammerjs": "~1.1.2",
+    "hammerjs": "2.0.4",
     "react": "0.13.3",
     "react.animate-djdeath": "0.0.3",
     "klay-js": "~0.1.0"
   },
   "resolutions": {
     "polymer": "~1.1.5",
-    "webcomponentsjs": "^0.7.2"
+    "webcomponentsjs": "^0.7.2",
+    "hammerjs": "2.0.4",
+    "angular": "~1.4.7"
   }
 }

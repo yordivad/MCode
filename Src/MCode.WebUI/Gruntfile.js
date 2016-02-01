@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                         destPrefix: "client/libs"
                     },
                     files: {
-                        "jquery.js": "jquery/jquery.js",
+                        "jquery.js": "jquery/dist/jquery.js",
                         "sweetalert.js": "sweetalert/dist/sweetalert-dev.js",
                         "angular.js": "angular/angular.js",
                         "bootstrap.js": "bootstrap/dist/js/bootstrap.js",

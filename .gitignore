@@ -23,3 +23,4 @@ Src/dist/
 /MCode.WebUI/node_modules
 /MCode.WebUI/wwwroot/lib
 Src/MCode.WebUI/typings/
+Src/MCode.WebUI/client/
