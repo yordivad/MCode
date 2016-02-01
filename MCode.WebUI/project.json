@@ -1,10 +1,12 @@
 {
   "version": "1.0.0-*",
-  "compilationOptions": {
+ 
+   "compilationOptions": {
     "emitEntryPoint": true
   },
 
   "dependencies": {
+    "Microsoft.AspNet.Antiforgery": "1.0.0-rc1-final",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Mvc.Core": "6.0.0-rc1-final",
@@ -14,7 +16,6 @@
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1-final",
-    "Microsoft.Extensions.CodeGenerators.Mvc": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
@@ -26,15 +27,8 @@
   },
 
   "frameworks": {
-    "dnx451": {
-      "dependencies": {
-        "Microsoft.AspNet.Identity.Core": "2.2.1",
-        "Microsoft.AspNet.Identity.Owin": "2.2.1",
-        "Microsoft.AspNet.SignalR": "2.2.0",
-        "Microsoft.AspNet.WebApi.Cors": "5.2.3",
-        "Microsoft.AspNet.WebApi.Owin": "5.2.3"
-      }
-    },
+    "net451": { },
+    "dnx451": { },
     "dnxcore50": { }
   },
 
@@ -42,12 +36,14 @@
     "wwwroot",
     "node_modules"
   ],
+
   "publishExclude": [
     "**.user",
     "**.vspscc"
   ],
+
   "scripts": {
     "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ]
-  },
-  "userSecretsId": "aspnet5-MCode.WebUI-20160131082112"
+  }
+
 }
