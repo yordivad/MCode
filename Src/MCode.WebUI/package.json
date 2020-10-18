@@ -7,7 +7,7 @@
   "description": "MCode Javascript Framework",
   "private": true,
   "dependencies": {
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.1",
     "angular": "^1.4.7",
     "bower": "^1.5.2",
     "chai": "^3.3.0",
